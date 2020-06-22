@@ -1,0 +1,774 @@
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ro" lang="ro">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <script>window.dataLayer = window.dataLayer || []; dataLayer.push({"pageBodyCssClass":"page-town-index"}); </script>
+    <!-- Google Tag Manager --><noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-NS5F4V" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-NS5F4V');</script><!-- End Google Tag Manager -->        <meta property="fb:app_id" content="647691012015091" />
+    <link rel="stylesheet" type="text/css" href="https://static.iabilet.ro/include/lib-v.1591888231/bootstrap/css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="https://static.iabilet.ro/include/lib-v.1591888231/jquery-blockui/jquery.blockUI.css" />
+    <link rel="stylesheet" type="text/css" href="https://static.iabilet.ro/include/lib-v.1591888231/bootstrap-datetimepicker/bootstrap-datetimepicker.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://static.iabilet.ro/include/site/css-v.1591888231/style.css" />
+    <link rel="stylesheet" type="text/css" href="https://static.iabilet.ro/assets/v.1591888231/d5cbb1e4/theme.css" />
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://static.iabilet.ro/include/lib-v.1591888231/jquery.hoverIntent.minified.js"></script>
+    <script type="text/javascript" src="https://static.iabilet.ro/include/lib-v.1591888231/bootstrap/js/bootstrap.js"></script>
+    <script type="text/javascript" src="https://static.iabilet.ro/include/lib-v.1591888231/underscore-1.8.3.js"></script>
+    <script type="text/javascript" src="https://static.iabilet.ro/include/lib-v.1591888231/lib-common.js"></script>
+    <script type="text/javascript" src="https://static.iabilet.ro/include/lib-v.1591888231/jquery-blockui/jquery.blockUI.js"></script>
+    <script type="text/javascript" src="https://static.iabilet.ro/include/lib-v.1591888231/moment/min/moment.min.js "></script>
+    <script type="text/javascript" src="https://static.iabilet.ro/include/lib-v.1591888231/moment/locale/ro.js"></script>
+    <script type="text/javascript" src="https://static.iabilet.ro/include/lib-v.1591888231/bootstrap-datetimepicker/bootstrap-datetimepicker.min.js"></script>
+    <script type="text/javascript" src="https://static.iabilet.ro/include/lib-v.1591888231/typeahead/typeahead.bundle.js"></script>
+    <script type="text/javascript" src="https://static.iabilet.ro/include/site/js-v.1591888231/common.js"></script>
+    <script type="text/javascript" src="https://static.iabilet.ro/include/site/js-v.1591888231/header.js"></script>
+    <script type="text/javascript" src="https://static.iabilet.ro/include/site/js-v.1591888231/event/eventListPaginated.js"></script>
+    <script type="text/javascript">
+        /*<![CDATA[*/
+        if (typeof(CFG) == "undefined") {  var CFG = {};} CFG.siteLanguage = "ro_RO";
+        /*]]>*/
+    </script>
+    <title>Bilete la concerte și evenimente în București - iaBilet.ro</title>
+    <link rel="shortcut icon" href="https://static.iabilet.ro/img/global/favico16.png" type="image/png">
+</head>
+
+<body class="is-site is-site-desktop page-town page-town-index">
+
+<div class="header-search">
+    <div class="backdrop"></div>
+    <div class="search-container">
+        <form action="/cauta/" method="get">
+            <input class="form-control" placeholder="Caută artist, trupă, locaţie" data-is-header-search="true" data-is-header-autocomplete="true" data-autocomplete-url="/site/search/autocomplete/" data-suggest-template="&lt;div class=&quot;&lt;%= entity %&gt;&quot;&gt;&lt;% if (entity == &quot;artist&quot;) { %&gt;&lt;% if (isFirstInGroup == true) { %&gt;&lt;div class=&quot;heading&quot;&gt;Artiști/Trupe&lt;/div&gt;&lt;% } %&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;div class=&quot;right&quot;&gt;&lt;div class=&quot;title&quot;&gt;&lt;%= name %&gt; &lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;% } else if (entity == &quot;venue&quot;) { %&gt;&lt;% if (isFirstInGroup == true) { %&gt;&lt;div class=&quot;heading&quot;&gt;Locații&lt;/div&gt;&lt;% } %&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;div class=&quot;right&quot;&gt;&lt;div class=&quot;event-title&quot;&gt;&lt;%= display_name %&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;% } else if (entity == &quot;event&quot;) { %&gt;&lt;% if (isFirstInGroup == true) { %&gt;&lt;div class=&quot;heading&quot;&gt;Evenimente&lt;/div&gt;&lt;% } %&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;div class=&quot;left&quot;&gt;&lt;% if (imageUrl) { %&gt;&lt;img src=&quot;&lt;%= imageUrl %&gt;&quot; /&gt;&lt;% } else { %&gt;&lt;div class=&quot;left&quot;&gt;&lt;/div&gt;&lt;% } %&gt;&lt;/div&gt;&lt;div class=&quot;right&quot;&gt;&lt;div class=&quot;title&quot;&gt;&lt;%= title %&gt; &lt;/div&gt;&lt;div class=&quot;when&quot;&gt;&lt;%= when %&gt;&lt;/div&gt;&lt;div class=&quot;venue&quot;&gt;// &lt;%= venue %&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;% } else if (entity == &quot;searchSite&quot;) { %&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;div class=&quot;left&quot;&gt;&lt;div class=&quot;glyphicon glyphicon-search image&quot;&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;right&quot;&gt;&lt;div class=&quot;event-title&quot;&gt;Caută: &lt;strong&gt;&lt;%= _query %&gt;&lt;/strong&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;% } %&gt;&lt;/div&gt;" autocomplete="off" spellcheck="false" type="text" value="" name="q" id="q" />
+            <button class="btn btn-default btn-link" type="submit"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+        </form>
+    </div>
+</div>
+
+<script>
+</script>
+
+
+
+<header class="global-header ">
+    <div class="container container-top">
+        <a class="logo" href="/"></a>
+        <div class="btn-toolbar pull-right header-user-bar">
+            <div class="btn-group btn-group-lg">
+
+                <div class="user-contextual-menu dropdown" style="display:inline-block">
+                    <span data-toggle="dropdown">
+                    Contul meu                    </span>
+                    <button id="userContextualMenu" class="dropdown-toggle" data-toggle="dropdown">
+                        <span class="glyphicon glyphicon-chevron-down"></span>
+                    </button>
+
+                    <ul class="dropdown-menu dropdown-menu-right">
+                        <li><a href="/auth/">Intră în cont</a></li>
+                        <li><a href="/account/create/">Cont nou</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="btn-toolbar header-location-selector">
+            <div class="btn-group btn-group-lg">
+
+                <div class="location-menu dropdown" style="display:inline-block">
+                    <div class="dropdown-toggle location-icon" data-toggle="dropdown">
+                        <span  class="glyphicon glyphicon-map-marker"></span>
+                        <span class="city">
+                            București                        </span>
+                        <span class="glyphicon glyphicon-chevron-down"></span>
+                    </div>
+
+
+                    <div class="dropdown-menu dropdown-menu-left">
+                        <div>
+                            <div class="dropdown-cat">
+                                1029 evenimente din 76 de orase                            </div>
+                            <ul class="dropdown-menu dropdown-columns columns-3">
+                                <li>
+                                    <a href="/bilete-in-bucuresti/">București</a>
+                                </li>
+                                <li>
+                                    <a href="/bilete-in-alba-iulia/">Alba Iulia</a>
+                                </li>
+                                <li>
+                                    <a href="/bilete-in-arad/">Arad</a>
+                                </li>
+                                <li>
+                                    <a href="/bilete-in-bacau/">Bacău</a>
+                                </li>
+                                <li>
+                                    <a href="/bilete-in-baia-mare/">Baia Mare</a>
+                                </li>
+                                <li>
+                                    <a href="/bilete-in-barlad/">Bârlad</a>
+                                </li>
+                                <li>
+                                    <a href="/bilete-in-bistrita/">Bistrița</a>
+                                </li>
+                                <li>
+                                    <a href="/bilete-in-botosani/">Botoșani</a>
+                                </li>
+                                <li>
+                                    <a href="/bilete-in-braila/">Brăila</a>
+                                </li>
+                                <li>
+                                    <a href="/bilete-in-brasov/">Brașov</a>
+                                </li>
+                                <li>
+                                    <a href="/bilete-in-buftea/">Buftea</a>
+                                </li>
+                                <li>
+                                    <a href="/bilete-in-buzau/">Buzău</a>
+                                </li>
+                                <li>
+                                    <a href="/bilete-in-calarasi/">Călărași</a>
+                                </li>
+                                <li>
+                                    <a href="/bilete-in-campina/">Câmpina</a>
+                                </li>
+                                <li>
+                                    <a href="/bilete-in-campulung/">Câmpulung</a>
+                                </li>
+                                <li>
+                                    <a href="/bilete-in-caracal/">Caracal</a>
+                                </li>
+                                <li>
+                                    <a href="/bilete-in-caransebes/">Caransebeș</a>
+                                </li>
+                                <li>
+                                    <a href="/bilete-in-carei/">Carei</a>
+                                </li>
+                                <li>
+                                    <a href="/bilete-in-cernavoda/">Cernavodă</a>
+                                </li>
+                                <li>
+                                    <a href="/bilete-in-cluj-napoca/">Cluj-Napoca</a>
+                                </li>
+                                <li>
+                                    <a href="/bilete-in-constanta/">Constanța</a>
+                                </li>
+                                <li>
+                                    <a href="/bilete-in-craiova/">Craiova</a>
+                                </li>
+                                <li>
+                                    <a href="/bilete-in-curtea-de-arges/">Curtea de Argeș</a>
+                                </li>
+                                <li>
+                                    <a href="/bilete-in-dej/">Dej</a>
+                                </li>
+                                <li>
+                                    <a href="/bilete-in-deva/">Deva</a>
+                                </li>
+                                <li>
+                                    <a href="/bilete-in-drobeta-turnu-severin/">Drobeta-Turnu Severin</a>
+                                </li>
+                                <li>
+                                    <a href="/bilete-in-fagaras/">Făgăraș</a>
+                                </li>
+                                <li>
+                                    <a href="/bilete-in-focsani/">Focșani</a>
+                                </li>
+                                <li>
+                                    <a href="/bilete-in-galati/">Galați</a>
+                                </li>
+                                <li>
+                                    <a href="/bilete-in-giurgiu/">Giurgiu</a>
+                                </li>
+                                <li>
+                                    <a href="/bilete-in-iasi/">Iași</a>
+                                </li>
+                                <li>
+                                    <a href="/bilete-in-lugoj/">Lugoj</a>
+                                </li>
+                                <li>
+                                    <a href="/bilete-in-mangalia/">Mangalia</a>
+                                </li>
+                                <li>
+                                    <a href="/bilete-in-oradea/">Oradea</a>
+                                </li>
+                                <li>
+                                    <a href="/bilete-in-piatra-neamt/">Piatra-Neamț</a>
+                                </li>
+                                <li>
+                                    <a href="/bilete-in-pitesti/">Pitești</a>
+                                </li>
+                                <li>
+                                    <a href="/bilete-in-ploiesti/">Ploiești</a>
+                                </li>
+                                <li>
+                                    <a href="/bilete-in-radauti/">Rădăuți</a>
+                                </li>
+                                <li>
+                                    <a href="/bilete-in-ramnicu-valcea/">Râmnicu Vâlcea</a>
+                                </li>
+                                <li>
+                                    <a href="/bilete-in-resita/">Reșița</a>
+                                </li>
+                                <li>
+                                    <a href="/bilete-in-roman/">Roman</a>
+                                </li>
+                                <li>
+                                    <a href="/bilete-in-satu-mare/">Satu Mare</a>
+                                </li>
+                                <li>
+                                    <a href="/bilete-in-sibiu/">Sibiu</a>
+                                </li>
+                                <li>
+                                    <a href="/bilete-in-sighisoara/">Sighișoara</a>
+                                </li>
+                                <li>
+                                    <a href="/bilete-in-slatina/">Slatina</a>
+                                </li>
+                                <li>
+                                    <a href="/bilete-in-slobozia/">Slobozia</a>
+                                </li>
+                                <li>
+                                    <a href="/bilete-in-suceava/">Suceava</a>
+                                </li>
+                                <li>
+                                    <a href="/bilete-in-targoviste/">Târgoviște</a>
+                                </li>
+                                <li>
+                                    <a href="/bilete-in-targu-jiu/">Târgu Jiu</a>
+                                </li>
+                                <li>
+                                    <a href="/bilete-in-targu-mures/">Târgu Mureș</a>
+                                </li>
+                                <li>
+                                    <a href="/bilete-in-targu-neamt/">Târgu Neamț</a>
+                                </li>
+                                <li>
+                                    <a href="/bilete-in-tecuci-galati/">Tecuci</a>
+                                </li>
+                                <li>
+                                    <a href="/bilete-in-timisoara/">Timișoara</a>
+                                </li>
+                                <li>
+                                    <a href="/bilete-in-tulcea/">Tulcea</a>
+                                </li>
+                                <li>
+                                    <a href="/bilete-in-turda-cluj/">Turda</a>
+                                </li>
+                                <li>
+                                    <a href="/bilete-in-urziceni-ialomita/">Urziceni</a>
+                                </li>
+                                <li>
+                                    <a href="/bilete-in-vaslui/">Vaslui</a>
+                                </li>
+                                <li>
+                                    <a href="/bilete-in-zalau/">Zalău</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div>
+                            <div class="dropdown-cat">Internațional</div>
+                            <ul class="dropdown-menu dropdown-columns">
+                                <li>
+                                    <a href="/bilete-in-bulgaria/">Bulgaria</a>
+                                </li>
+                                <li>
+                                    <a href="/bilete-in-franta/">Franta</a>
+                                </li>
+                                <li>
+                                    <a href="/bilete-in-grecia/">Grecia</a>
+                                </li>
+                                <li>
+                                    <a href="/bilete-in-irlanda/">Irlanda</a>
+                                </li>
+                                <li>
+                                    <a href="/bilete-in-italia/">Italia</a>
+                                </li>
+                                <li>
+                                    <a href="/bilete-in-marea-britanie/">Marea Britanie</a>
+                                </li>
+                                <li>
+                                    <a href="/bilete-in-rusia/">Rusia</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="bxX6Rrew5E" id="bxX6Rrew5E">
+    </div>
+    <!-- /Top banner -->
+
+    <div class="navbar">
+
+        <div class="container container-navbar">
+            <ul class="nav navbar-nav">
+
+                <li class="event-category color_1">
+                    <div class="user-contextual-menu dropdown" style="display:inline-block">
+
+                        <a class="toggle" href=""><span>Concerte</span></a>
+                        <ul class="dropdown-menu dropdown-menu-left">
+                            <li><a href="/bilete-in-bucuresti/bilete-concerte-pop/">Pop</a></li>
+                            <li><a href="/bilete-in-bucuresti/bilete-concerte-rock/">Rock</a></li>
+                            <li><a href="/bilete-in-bucuresti/bilete-concerte-muzica-clasica/">Clasica</a></li>
+                            <li><a href="/bilete-in-bucuresti/bilete-concerte-electro/">Electronica</a></li>
+                            <li><a href="/bilete-in-bucuresti/bilete-muzica-de-petrecere/">Muzica de Petrecere</a></li>
+                            <li><a href="/bilete-in-bucuresti/bilete-concerte-metal/">Metal</a></li>
+                            <li><a href="/bilete-in-bucuresti/bilete-concerte-hip-hop/">Hip Hop</a></li>
+                            <li><a href="https://www.iabilet.ro/bilete-concerte-pop-rock/">Pop Rock</a></li>
+                            <li><a href="/bilete-in-bucuresti/bilete-concerte-jazz/">Jazz</a></li>
+                            <li><a href="/bilete-in-bucuresti/bilete-concerte-folk/">Folk</a></li>
+                            <li><a href="/bilete-in-bucuresti/bilete-concerte-populara/">Populara</a></li>
+                            <li><a href="/bilete-in-bucuresti/bilete-concerte-reggae/">Reggae</a></li>
+                            <li><a href="/bilete-in-bucuresti/bilete-concerte-fado/">Fado</a></li>
+                            <li><a href="/bilete-in-bucuresti/bilete-conferinte/">Conferinte</a></li>
+                            <li><a href="/bilete-in-bucuresti/bilete-concerte/"><strong>Toate</strong></a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="event-category color_2">
+                    <div class="user-contextual-menu dropdown" style="display:inline-block">
+
+                        <a class="toggle" href="#"><span>Teatru</span></a>
+                        <ul class="dropdown-menu dropdown-menu-left">
+                            <li><a href="/bilete-in-bucuresti/bilete-teatru-pentru-copii/">Teatru pentru copii</a></li>
+                            <li><a href="/bilete-in-bucuresti/bilete-teatru/">Teatru</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="event-category color_3 light">
+                    <div class="user-contextual-menu dropdown" style="display:inline-block">
+
+                        <a class="toggle" href="/bilete-in-bucuresti/bilete-stand-up-comedy/"><span>Stand-Up</span></a>
+                    </div>
+                </li>
+                <li class="event-category color_4 light">
+                    <div class="user-contextual-menu dropdown" style="display:inline-block">
+
+                        <a class="toggle" href="/bilete-in-bucuresti/bilete-festivaluri/"><span>Festivaluri</span></a>
+                    </div>
+                </li>
+                <li class="event-category menu-hard-rock color_5 light">
+                    <div class="user-contextual-menu dropdown" style="display:inline-block">
+
+                        <a class="toggle" href="/bilete-hard-rock-cafe-venue-560/"><span>Hard Rock Cafe</span></a>
+                    </div>
+                </li>
+                <li class="event-category color_6 light">
+                    <div class="user-contextual-menu dropdown" style="display:inline-block">
+
+                        <a class="toggle" href="/bilete-beraria-h-venue-1510/"><span>Berăria H</span></a>
+                    </div>
+                </li>
+                <li class="event-category color_7 light">
+                    <div class="user-contextual-menu dropdown" style="display:inline-block">
+
+                        <a class="toggle" href="/bilete-arenele-romane-venue-25/"><span>Arene</span></a>
+                    </div>
+                </li>
+                <li class="event-category color_8 light">
+                    <div class="user-contextual-menu dropdown" style="display:inline-block">
+
+                        <a class="toggle" href="/bilete-sala-palatului-venue-876/"><span>Sala Palatului</span></a>
+                    </div>
+                </li>
+                <li class="event-category color_9">
+                    <div class="user-contextual-menu dropdown" style="display:inline-block">
+
+                        <a class="toggle" href="#"><span>Orașe</span></a>
+                        <ul class="dropdown-menu dropdown-menu-left">
+                            <li><a href="/bilete-in-bucuresti/">București</a></li>
+                            <li><a href="/bilete-in-cluj-napoca/">Cluj-Napoca</a></li>
+                            <li><a href="/bilete-in-brasov/">Brașov</a></li>
+                            <li><a href="/bilete-in-timisoara/">Timișoara</a></li>
+                            <li><a href="/bilete-in-iasi/">Iași</a></li>
+                            <li><a href="/bilete-in-constanta/">Constanța</a></li>
+                            <li><a href="/bilete-in-sibiu/">Sibiu</a></li>
+                            <li><a href="/bilete-in-galati/">Galați</a></li>
+                            <li><a href="/bilete-in-ploiesti/">Ploiești</a></li>
+                            <li><a href="/bilete-in-oradea/">Oradea</a></li>
+                            <li><a href="/bilete-in-bacau/">Bacău</a></li>
+                            <li><a href="/bilete-in-craiova/">Craiova</a></li>
+                            <li><a href="/bilete-in-buzau/">Buzău</a></li>
+                            <li><a href="/bilete-in-vama-veche/">Vama Veche</a></li>
+                            <li><a href="/bilete-in-ramnicu-valcea/">Râmnicu Vâlcea</a></li>
+                            <li><a href="/bilete-in-targu-mures/">Târgu Mureș</a></li>
+                            <li><a href="/bilete-in-piatra-neamt/">Piatra-Neamț</a></li>
+                            <li><a href="/bilete-in-suceava/">Suceava</a></li>
+                            <li><a href="/bilete-in-pitesti/">Pitești</a></li>
+                            <li><a href="/bilete-in-deva/">Deva</a></li>
+                            <li><a href="/bilete-in-botosani/">Botoșani</a></li>
+                            <li><a href="/bilete-in-focsani/">Focșani</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="event-category color_10">
+                    <div class="user-contextual-menu dropdown" style="display:inline-block">
+
+                        <a class="toggle" href="#"><span>Locații</span></a>
+                        <ul class="dropdown-menu dropdown-menu-left">
+                            <li><a href="/bilete-sala-palatului-venue-876/">Sala Palatului</a></li>
+                            <li><a href="/bilete-arenele-romane-venue-25/">Arenele Romane</a></li>
+                            <li><a href="/bilete-hard-rock-cafe-venue-560/">Hard Rock Cafe</a></li>
+                            <li><a href="/bilete-beraria-h-venue-1510/">Berăria H</a></li>
+                            <li><a href="/bilete-the-fool-venue-3205/">The Fool</a></li>
+                            <li><a href="/bilete-club-99-venue-1409/">Club 99</a></li>
+                            <li><a href="/bilete-comics-club-venue-3321/">Comics Club</a></li>
+                            <li><a href="/bilete-form-space-venue-1907/">/FORM SPACE</a></li>
+                            <li><a href="/bilete-quantic-venue-1705/">Quantic</a></li>
+                            <li><a href="/bilete-expirat-halele-carol-venue-1845/">Expirat Halele Carol</a></li>
+                            <li><a href="/bilete-club-midi-venue-3847/">Club Midi</a></li>
+                            <li><a href="/bilete-14thlane-venue-4095/">14thlane</a></li>
+                            <li><a href="/bilete-bt-arena-venue-1791/">Sala Polivalenta Cluj-Napoca</a></li>
+                            <li><a href="/bilete-teatrul-national-venue-2487/">Teatrul National</a></li>
+                            <li><a href="/bilete-kruhnen-musik-halle-venue-1835/">Kruhnen Musik Halle</a></li>
+                            <li><a href="/bilete-rockstadt-venue-1142/">Rockstadt</a></li>
+                            <li><a href="/bilete-romexpo-venue-1461/">Romexpo</a></li>
+                            <li><a href="/bilete-mojo-club-venue-1514/">Mojo Club</a></li>
+                            <li><a href="/bilete-the-pub-universitatii-venue-3377/">The Pub - Universitatii</a></li>
+                            <li><a href="/bilete-club-the-hub-venue-682/">Club "The Hub"</a></li>
+                            <li><a href="/bilete-la-mama-clubul-taranului-venue-4009/">La Mama - Clubul Țăranului</a></li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+            <ul class="nav navbar-right">
+                <li>
+                    <a class="header-calendar-launcher " data-purpose="header-calendar-launcher" data-day-url-template="/bilete/__year__/__month__/__day__/" data-month-url-template="/bilete/__year__/__month__/" data-month-label-template="Vezi tot &lt;%= monthYear %&gt;" href="javascript:void(0)"><span class="glyphicon glyphicon-calendar"></span></a>                    </li>
+            </ul>
+
+            <div class="header-calendar" data-purpose="data-selector-container">
+                <div class="day-selector" data-purpose="day-selector-container"></div>
+                <a href="javascript:void(0)" class="btn btn-primary btn-xs btn-block" data-purpose="month-link"></a>
+            </div>
+            <script>
+            </script>
+        </div>
+    </div>
+</header>
+
+
+
+<section class="global-container">
+    <div class="container event-list-container">
+        <h1>Bilete la concerte și evenimente în București</span></h1>
+
+        <div class="event-list" id="eventListPaginatedId">
+            <div class="event-list-items">
+                <script type="application/ld+json">
+                    /*<![CDATA[*/
+                    {"@context":"http:\/\/www.schema.org","@type":"Event","name":"Bucuresti: Museum of Senses","url":"https:\/\/www.iabilet.ro\/bilete-bucuresti-museum-of-senses-39903\/","description":"Adauga doua bilete in cos si platesti doar unul!\r\n\r\nOferta esta valabila pentru biletele de adulti si copii, nu si pentru biletele family. Oferta este\u2026","startDate":"2019-02-08","endDate":"2020-12-31","image":"https:\/\/static.iabilet.ro\/img\/auto_resized\/db\/event\/00\/9b\/df\/00000083031-89b9-245x0-w-3fd1bb0a.jpg","location":{"@type":"Place","name":"Museum of Senses - Afi Cotroceni Bucuresti","address":{"@type":"PostalAddress","streetAddress":"Bulevardul General Vasile Milea 4, Bucure\u0219ti ","addressLocality":"Bucure\u0219ti"}},"offers":{"@type":"Offer","url":"https:\/\/www.iabilet.ro\/bilete-bucuresti-museum-of-senses-39903\/","price":"29","priceCurrency":"RON"}}
+                    /*]]>*/
+                </script>
+                <div class="row event-list-item event-is-future event-multi-day"  data-likable-item="event/39903" data-likable-tag="like" data-likable-disabled="0">
+                <div class="col-xs-3">
+                    <a href="/bilete-bucuresti-museum-of-senses-39903/">
+                        <div class="likable-image-container is-future multi-day event-image main-image" data-event-image="true"><img src="https://static.iabilet.ro/img/auto_resized/db/event/00/9b/df/00000051559-dbfb-227x170-b-14592072.jpg" alt="Bucuresti: Museum of Senses" /><div class="overlayer"></div>
+                            <div class="like bottom-right">
+                                <span class="counter" data-likable-counter></span>
+                                <i class="icon" onclick="return false;" data-likable-button></i>
+                            </div></div>        </a>
+                </div>
+
+                <div class="col-xs-1">
+                    <div class="date">
+                        <div class="date-start">
+                            <span class="date-day">08</span>
+                            <span class="date-month">feb</span>
+                            <span class="date-year">'19</span>
+                        </div>
+                        <div class="date-end">
+                            <span class="date-day">31</span>
+                            <span class="date-month">dec</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xs-6 main-info">
+                    <div class="title">
+                        <a href="/bilete-bucuresti-museum-of-senses-39903/"><span>Bucuresti: <strong>Museum of Senses</strong></span></a>
+                    </div>
+
+                    <div class="location" style="">
+                        <a href="/bilete-museum-of-senses-afi-cotroceni-bucuresti-venue-3363/" class="venue">
+                            <span>Museum of Senses - Afi Cotroceni Bucuresti</span>
+                        </a>
+                        &middot;
+                        <span>
+            <a href="/bilete-in-bucuresti/" class="venue">
+                 <span>București</span>
+            </a>
+            </span>
+                    </div>
+
+                    <div>Adauga doua bilete in cos si platesti doar unul!
+
+                        Oferta esta valabila pentru biletele de adulti si copii, nu si pentru biletele family. Oferta este…</div>
+
+
+                </div>
+
+                <div class="col-xs-2">
+                    <div class="details">
+                        <a href="/bilete-bucuresti-museum-of-senses-39903/" class="btn btn-primary">ia bilet</a>
+                        <div class="price">
+                            de la 29 lei            </div>
+                    </div>
+                </div>
+            </div>
+                <script type="application/ld+json">
+                    /*<![CDATA[*/
+                    {"@context":"http:\/\/www.schema.org","@type":"Event","name":"Abonamente 2019-2020 Rapid Bucuresti - Handbal Feminin","url":"https:\/\/www.iabilet.ro\/bilete-abonamente-2019-2020-rapid-bucuresti-handbal-feminin-44939\/","description":"Abonamentele sunt valabile la toate meciurile disputate acas\u0103 de echipa noastr\u0103, at\u00e2t \u00een Liga Florilor c\u00e2t \u0219i \u00een Cupa Rom\u00e2niei. \r\nV\u0103 rug\u0103m\u2026","startDate":"2019-08-22","endDate":"2020-06-30","image":"https:\/\/static.iabilet.ro\/img\/auto_resized\/db\/event\/00\/af\/8b\/00000067781-dc6c-245x0-w-400b8f70.jpg","location":{"@type":"Place","name":"Sala Rapid","address":{"@type":"PostalAddress","streetAddress":"Cartierul Giule\u0219ti, Calea Giule\u0219ti nr. 18","addressLocality":"Bucure\u0219ti"}},"offers":{"@type":"Offer","url":"https:\/\/www.iabilet.ro\/bilete-abonamente-2019-2020-rapid-bucuresti-handbal-feminin-44939\/","price":"370","priceCurrency":"RON"}}
+                    /*]]>*/
+                </script><div class="row event-list-item event-is-future event-multi-day"  data-likable-item="event/44939" data-likable-tag="like" data-likable-disabled="0">
+                <div class="col-xs-3">
+                    <a href="/bilete-abonamente-2019-2020-rapid-bucuresti-handbal-feminin-44939/">
+                        <div class="likable-image-container is-future multi-day event-image main-image" data-event-image="true"><img src="https://static.iabilet.ro/img/auto_resized/db/event/00/af/8b/00000067783-7802-227x170-b-ae659711.jpg" alt="Abonamente 2019-2020 Rapid Bucuresti - Handbal Feminin" /><div class="overlayer"></div>
+                            <div class="like bottom-right">
+                                <span class="counter" data-likable-counter></span>
+                                <i class="icon" onclick="return false;" data-likable-button></i>
+                            </div></div>        </a>
+                </div>
+
+                <div class="col-xs-1">
+                    <div class="date">
+                        <div class="date-start">
+                            <span class="date-day">22</span>
+                            <span class="date-month">aug</span>
+                            <span class="date-year">'19</span>
+                        </div>
+                        <div class="date-end">
+                            <span class="date-day">30</span>
+                            <span class="date-month">iun</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xs-6 main-info">
+                    <div class="title">
+                        <a href="/bilete-abonamente-2019-2020-rapid-bucuresti-handbal-feminin-44939/"><span><strong>Abonamente 2019-2020 Rapid Bucuresti - Handbal Feminin</strong></span></a>
+                    </div>
+
+                    <div class="location" style="">
+                        <a href="/bilete-sala-rapid-venue-3985/" class="venue">
+                            <span>Sala Rapid</span>
+                        </a>
+                        &middot;
+                        <span>
+            <a href="/bilete-in-bucuresti/" class="venue">
+                 <span>București</span>
+            </a>
+            </span>
+                    </div>
+
+                    <div>Abonamentele sunt valabile la toate meciurile disputate acasă de echipa noastră, atât în Liga Florilor cât și în Cupa României.
+                        Vă rugăm…</div>
+
+
+                </div>
+
+            </div>
+
+                <script type="application/ld+json">
+                    /*<![CDATA[*/
+                    {"@context":"http:\/\/www.schema.org","@type":"Event","name":"Coffee Bike - Vouchere de sustinere","url":"https:\/\/www.iabilet.ro\/bilete-coffee-bike-vouchere-de-sustinere-54253\/","description":"Coffee Bike iti ofera cafeaua de care ai nevoie in fiecare dimineata, sau freshul care iti da putere sa continui ziua.\r\nSi pentru ca ei sa poata sa\u2026","startDate":"2020-04-06","endDate":"2020-12-31","image":"https:\/\/static.iabilet.ro\/img\/auto_resized\/db\/event\/00\/d3\/ed\/00000100115-4882-245x0-w-0b698fb8.png","location":{"@type":"Place","name":"Bucuresti","address":{"@type":"PostalAddress","streetAddress":"","addressLocality":"Bucure\u0219ti"}},"offers":{"@type":"Offer","url":"https:\/\/www.iabilet.ro\/bilete-coffee-bike-vouchere-de-sustinere-54253\/","price":"25","priceCurrency":"RON"}}
+                    /*]]>*/
+                </script><div class="row event-list-item event-is-future event-multi-day"  data-likable-item="event/54253" data-likable-tag="like" data-likable-disabled="0">
+                <div class="col-xs-3">
+                    <a href="/bilete-coffee-bike-vouchere-de-sustinere-54253/">
+                        <div class="likable-image-container is-future multi-day event-image main-image" data-event-image="true"><img src="https://static.iabilet.ro/img/auto_resized/db/event/00/d3/ed/00000100113-db0c-227x170-b-7e9e9dce.png" alt="Coffee Bike - Vouchere de sustinere" /><div class="overlayer"></div>
+                            <div class="like bottom-right">
+                                <span class="counter" data-likable-counter></span>
+                                <i class="icon" onclick="return false;" data-likable-button></i>
+                            </div></div>        </a>
+                </div>
+
+                <div class="col-xs-1">
+                    <div class="date">
+                        <div class="date-start">
+                            <span class="date-day">06</span>
+                            <span class="date-month">apr</span>
+                        </div>
+                        <div class="date-end">
+                            <span class="date-day">31</span>
+                            <span class="date-month">dec</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xs-6 main-info">
+                    <div class="title">
+                        <a href="/bilete-coffee-bike-vouchere-de-sustinere-54253/"><span><strong>Coffee Bike - Vouchere de sustinere</strong></span></a>
+                    </div>
+
+                    <div class="location" style="">
+                        <a href="/bilete-bucuresti-venue-4587/" class="venue">
+                            <span>Bucuresti</span>
+                        </a>
+                        &middot;
+                        <span>
+            <a href="/bilete-in-bucuresti/" class="venue">
+                 <span>București</span>
+            </a>
+            </span>
+                    </div>
+
+                    <div>Coffee Bike iti ofera cafeaua de care ai nevoie in fiecare dimineata, sau freshul care iti da putere sa continui ziua.
+                        Si pentru ca ei sa poata sa…</div>
+
+
+                </div>
+
+                <div class="col-xs-2">
+                    <div class="details">
+                        <a href="/bilete-coffee-bike-vouchere-de-sustinere-54253/" class="btn btn-primary">ia bilet</a>
+                        <div class="price">
+                            de la 25 lei            </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+
+            <div class="btn-more-container text-center" data-purpose="load-more-events-container">
+                <a href="/bilete-in-bucuresti/?eventListPaginatedId=eventListPaginatedId&page=2"
+                   class="btn btn-more" data-purpose="load-more-events">mai mult</a>
+            </div>
+
+        </div>
+
+        <script>
+        </script>
+    </div>
+</section>
+
+<footer class="global-footer">
+    <div class="footer-top-container">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-3">
+                    <div class="footer-links">
+                        <p><img src="https://static.iabilet.ro/img/site/logo_iabilet_footer.png"
+                                width="95" height="31"/></p>
+
+                        <p><a class="toggle" target='_self' href="/contact/">Contact</a></p>
+
+                        <p><a class="toggle" target='_self' href="/terms/">Termeni și condiții</a></p>
+
+                        <p><a class="toggle" target='_self' href="/faq/">Întrebări frecvente</a></p>
+
+                        <p><a class="toggle" target='_self' href="/politica-de-confidentialitate">Politică de confidențialitate</a></p>
+
+                        <p><a class="toggle" target='_self' href="/servicii/">Servicii pentru organizatori</a></p>
+
+                        <p><a class="toggle" target='_self' href="/puncte-de-vanzare/">Rețeaua iabilet.ro</a></p>
+
+                        <p><a class="toggle" target='_self' href="/site-ul-tau/">Vinde bilete pe site-ul tău</a></p>
+
+                        <p><a class="toggle" target='_self' href="/artist/">Artiști</a></p>
+
+                        <p><a class="toggle" target='_blank' href="http://www.anpc.gov.ro/">ANPC</a></p>
+
+                        <p><a class="toggle" target='_self' href="/jobs/">Cariere</a></p>
+                        <p class="copyright">© 2012-2020 iaBilet.ro</p>
+                    </div>
+                </div>
+                <div class="col-xs-3">
+                    <div class="footer-social">
+                        <h3>Facebook</h3>
+                        <p>Cu un simplu like vei primi recomandări de evenimente direct pe pagina ta de Facebook.</p>
+                        <p><iframe src="//www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.facebook.com%2FiaBilet%2F&amp;layout=button&amp;action=like&amp;show_faces=false&amp;share=false&amp;height=21"
+                                   scrolling="no" frameborder="0"
+                                   style="border:none; overflow:hidden; width:100px; height:25px;"
+                                   allowTransparency="true"></iframe></p>
+
+                        <h3>Instagram</h3>
+                        <p>iaBilet este și pe Instagram. Urmărește-ne ca să afli noutățile de pe site.</p>
+                        <p><a href="https://www.instagram.com/iabilet/" target="_blank"><img
+                                src="https://static.iabilet.ro/img/site/logo_instagram.png"
+                                width="42" height="42" border="0"
+                                style="display:inline;width:42px; height:42px;"/></a></p>
+                    </div>
+                </div>
+                <div class="col-xs-3">
+                    <div class="footer-nsl">
+                        <h3>Newsletter</h3>
+                        <p>În fiecare săptămână primeşti pe email cele mai tari concerte şi evenimente.</p>
+                        <form class="footer-nsl-form" action="/newsletter/" method="post"><input class="form-control" placeholder="Email" type="text" value="" name="email" id="email" /><input type="hidden" value="submit" name="submit" id="submit" /><input type="hidden" value="footer" name="source" id="source" /><button class="btn btn-submit" type="submit" name="yt0"></button></form>                                            </div>
+                </div>
+                <div class="col-xs-3">
+                    <div class="footer-mobile">
+                        <h3>iaBilet pe mobil</h3>
+                        <p>Cumperi bilete oriunde te-ai afla. Intri la spectacole direct cu mobilul.</p>
+                        <p>
+                            <a href="https://itunes.apple.com/ro/app/iaBilet/id899564929" target="_blank"><img
+                                    src="https://static.iabilet.ro/img/site/logo_apple.png"
+                                    width="42" height="42" border="0"
+                                    style="display:inline;width:42px; height:42px;"/></a>
+                            <a href="https://play.google.com/store/apps/details?id=ro.imedia.iabilet"
+                               target="_blank"><img
+                                    src="https://static.iabilet.ro/img/site/logo_android.png"
+                                    width="42" height="42" border="0"
+                                    style="display:inline;width:42px; height:42px;"/></a>
+                        </p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom-container">
+        <div class="partners">
+            <a href="http://www.bestmusic.ro/" target="_blank"><img
+                    src="https://static.iabilet.ro/img/site/logo_bestmusic_footer.png" width="79"
+                    height="19"/></a>
+            <a href="http://www.metalhead.ro/" target="_blank"><img
+                    src="https://static.iabilet.ro/img/site/logo_metalhead_footer.png" width="83"
+                    height="17"/></a>
+            <a href="http://www.cinemagia.ro/" target="_blank"><img
+                    src="https://static.iabilet.ro/img/site/logo_cinemagia_footer.png" width="96"
+                    height="27"/></a>
+        </div>
+        <div class="quote">
+            "If I had asked people what they wanted, they would have said faster horses."
+            - <a href="http://ro.wikipedia.org/wiki/Henry_Ford" class="author" target="_blank">Henry Ford</a>
+        </div>
+    </div>
+</footer>
+
+
+
+<script type="text/javascript">
+    /*<![CDATA[*/
+    jQuery(function($) {
+        preloadFonts();
+        eventListInitEvent({
+            btnContainerSelector: '#eventListPaginatedId.event-list *[data-purpose="load-more-events-container"]',
+            btnSelector: '#eventListPaginatedId.event-list *[data-purpose="load-more-events"]',
+            itemSelector: '#eventListPaginatedId.event-list .event-list-items .event-list-item',
+            itemsContainerSelector: '#eventListPaginatedId.event-list .event-list-items'
+        });
+
+
+        $(document).ready(function () {
+            initHeaderAutocomplete();
+            initHeaderMenu();
+        });
+
+
+        $(document).ready(function () {
+            initHeaderCalendar('ro_RO');
+        });
+
+        $(document).keydown(function (e) {
+// ctrl+f
+            if (e.which == 70 && e.ctrlKey) {
+                ga('send', 'event', 'ctrl_f', 'keypress');
+            }
+        });
+
+    });
+    /*]]>*/
+</script>
+</body>
+</html>
+
