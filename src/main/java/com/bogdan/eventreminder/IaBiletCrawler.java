@@ -4,10 +4,13 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
+import java.io.IOException;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -16,6 +19,8 @@ import java.util.Map;
 
 @Component
 public class IaBiletCrawler {
+
+    Logger LOG = LoggerFactory.getLogger(IaBiletCrawler.class);
 
     private Map<String, Integer> monthToInt = new HashMap<>();
 
@@ -37,12 +42,25 @@ public class IaBiletCrawler {
         monthToInt.put("dec", 12);
     }
 
-    @Scheduled(fixedRate = 30000)
-    //"https://www.iabilet.ro/bilete-in-bucuresti/?eventListPaginatedId=eventListPaginatedId&page=1"
-    public List<Event> extract(String html) throws Exception {
+
+    @Scheduled(fixedRate = 10000)
+    public void run() {
+        LOG.info("A pornit IaBiletCrawler");
+        extract("https://www.iabilet.ro/bilete-in-bucuresti/?eventListPaginatedId=eventListPaginatedId&page=1");
+        LOG.info("S-a terminat IaBiletCrawler");
+    }
+
+    public List<Event> extract(String html)  {
+        LOG.info("Incep sa parsez fisiserul html: " + html);
         List<Event> events = new ArrayList<>();
 
-        Document doc = Jsoup.parse(html);
+        Document doc = null;
+        try {
+            doc = Jsoup.connect(html).get();
+        } catch (IOException e) {
+            LOG.error("A aparut o eroare cand s-a procesat html" + html);
+            e.printStackTrace();
+        }
         Elements elements = doc.select(".event-list-item");
         for (Element eventElement : elements) {
             Element elementTitle = eventElement.selectFirst(".title span");
@@ -58,11 +76,15 @@ public class IaBiletCrawler {
             if (!dateStartYear.equals("")) {
                 year = Integer.parseInt("20" + Integer.parseInt(dateStartYear));
             }
-            LocalDate eventDate = LocalDate.of(
+            LocalDate dateStart = LocalDate.of(
                     year,
                     monthToInt.get(dateStartMonth),
                     Integer.parseInt(dateStartDay));
-            event.setDate(eventDate);
+            event.setDateStart(dateStart);
+
+            event.setDescription(eventElement.select(".main-info div").get(2).text());
+            event.setLocation(eventElement.select(".location .venue span").get(0).text());
+            event.setCity(eventElement.select(".location .venue span").get(1).text());
 
             events.add(event);
         }
@@ -73,6 +95,8 @@ public class IaBiletCrawler {
                 eventDao.save(event);
             }
         }
+
+        LOG.info("Am terminat sa parsez fisiserul html: " + html +". Am extras " + events);
 
         return events;
     }

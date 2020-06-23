@@ -18,7 +18,9 @@ public class Event {
     private String name;
     private String description;
     private String location;
-    private LocalDate date;
+    private String city;
+    private LocalDate dateStart;
+    private LocalDate dateEnd;
     private String url;
 
     public int getId() {
@@ -53,20 +55,36 @@ public class Event {
         this.location = location;
     }
 
-    public LocalDate getDate() {
-        return date;
-    }
-
-    public void setDate(LocalDate date) {
-        this.date = date;
-    }
-
     public String getUrl() {
         return url;
     }
 
     public void setUrl(String url) {
         this.url = url;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
+
+    public LocalDate getDateStart() {
+        return dateStart;
+    }
+
+    public void setDateStart(LocalDate dateStart) {
+        this.dateStart = dateStart;
+    }
+
+    public LocalDate getDateEnd() {
+        return dateEnd;
+    }
+
+    public void setDateEnd(LocalDate dateEnd) {
+        this.dateEnd = dateEnd;
     }
 
     @Override
@@ -76,7 +94,9 @@ public class Event {
                 + ",                         \"name\":\"" + name + "\""
                 + ",                         \"description\":\"" + description + "\""
                 + ",                         \"location\":\"" + location + "\""
-                + ",                         \"date\":" + date
+                + ",                         \"city\":\"" + city + "\""
+                + ",                         \"dateStart\":" + dateStart
+                + ",                         \"dateEnd\":" + dateEnd
                 + ",                         \"url\":\"" + url + "\""
                 + "}";
     }

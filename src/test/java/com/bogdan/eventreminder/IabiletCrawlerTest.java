@@ -2,12 +2,12 @@ package com.bogdan.eventreminder;
 
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
-import org.junit.platform.runner.JUnitPlatform;
 import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.time.LocalDate;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -28,6 +28,10 @@ public class IabiletCrawlerTest {
 
         assertEquals(events.size(), 24);
         assertEquals(events.get(0).getName(),"Bucuresti: Museum of Senses");
+        assertEquals(events.get(0).getDescription(), "Adauga doua bilete in cos si platesti doar unul!");
+        assertEquals(events.get(0).getDateStart(), LocalDate.of(2019, 2, 8));
+        assertEquals(events.get(0).getLocation(), "Museum of Senses - Afi Cotroceni Bucuresti");
+        assertEquals(events.get(0).getCity(), "București");
     }
 
     @Test
